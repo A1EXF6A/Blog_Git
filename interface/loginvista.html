@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ash</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="../estilos_login.css">
+    <script src="../controllers/ValidarEntrada.js"></script>
+    <script src="../controllers/Errores.js"></script> <!-- Incluir Errores.js -->
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="navbar-brand">My Blog ASH</div>
+        <div class="navbar-buttons">
+            <a href="Invitado.html" class="button">Invitado</a>
+            <a href="registrarvista.html" class="button">Registrarse</a>
+        </div>
+    </div>
+    <!-- Formulario de login -->
+    <form class="formulario" onsubmit="return ValidacionesEntrada.Login()" method="POST"
+        action="../queries/consulta_login.php">
+        <h1>Login</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input name="usuario" id="usuario" type="text" placeholder="Usuario" required>
+                <div id="usuario-error" class="error-message"></div>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input name="contraseña" id="contrasena" type="password" placeholder="Contraseña" required>
+                <div id="contrasena-error" class="error-message"></div>
+            </div>
+            <!-- Contenedor de alertas -->
+            <div class="error-message" role="alert" id="login-alert" style="display: none;">
+                <!-- Mensaje de alerta se mostrará aquí -->
+            </div>
+            <input type="submit" value="Login" class="button">
+        </div>
+        <p2>¿Olvidaste tu contraseña? <a class="link" href="RecuperarContraseña.html">Recuperar contraseña</a></p2>
+    </form>
+</body>
+
+</html>

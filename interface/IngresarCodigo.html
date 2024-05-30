@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ash</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="../estilos_login.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="navbar-brand">My Blog ASH</div>
+        <div class="navbar-buttons">
+        </div>
+    </div>
+    <div id="codigo-generado">
+        <p id="codigo"></p>
+    </div>
+    <!--<p>My Blog ASH</p>-->
+    <!-- Formulario de login -->
+    <form class="formulario" action="../queries/verificar_codigo.php" method="POST" id="formulario">
+        <h1>Ingrese el código</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input name="codigo" id="codigo" type="text" placeholder="Código" required>
+                <div id="codigo-error" class="error-message"></div>
+            </div>
+            <input type="submit" value="Verificar" class="button">
+        </div>
+    </form>
+
+</body>
+
+</html>

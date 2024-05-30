@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog AsH</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+  <header>
+    <div class="dropdown">
+      <button class="button"></button>
+      <div class="dropdown-content">
+        <a href="crearNuevo.html">NUEVO</a>
+        <a href="listas.html">LISTAS</a>
+        <a href="../index.html">SALIR</a>
+      </div>
+    </div>
+    <h1>My Blog AsH</h1>
+    <div class="user-info">USUARIO</div>
+  </header>
+
+
+
+  <main>
+    <section id="post-view">
+      <center>
+        <h2 id="post-title">TITULO</h2>
+      </center>
+      <p>CONTENIDO QUE TIENE EL POST</p>
+      <div class="post-meta">
+        <span>PUBLICADO POR:</span>
+        <span>CATEGORIAS:</span>
+      </div>
+      <hr>
+      <div class="comments">
+        <h3>COMENTARIOS:</h3>
+        <div class="comment-form">
+          <textarea id="comment-input" placeholder="COMENTARIO"></textarea>
+          <button class="send-btn" id="send-btn">ENVIAR</button>
+        </div>
+        <div id="comments-list"></div>
+      </div>
+      <div class="user-message"></div>
+    </section>
+  </main>
+
+  <script src="../controllers/script1.js"></script>
+</body>
+
+</html>

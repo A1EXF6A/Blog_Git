@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="../estilos_login.css">
+    <script src="../controllers/ValidarEntrada.js" defer></script>
+    <script src="../controllers/Errores.js" defer></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">My Blog ASH</div>
+        <div class="navbar-buttons">
+            <a href="Invitado.html" class="button">Invitado</a>
+            <a href="loginvista.html" class="button">Login</a>
+        </div>
+    </div>
+    <form class="formulario" onsubmit="return ValidacionesEntrada.registro()" action="../inserts/enviar_datos.php"
+        method="POST">
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input name="nombre" id="nombre" type="text" placeholder="Nombre Completo" required>
+                <div id="nombrecompleto-error" class="error-message"></div>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input name="correo" type="text" id="correo" placeholder="Correo Electronico" required>
+                <div id="email-error" class="error-message"></div>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input name="usuario" type="text" id="usuario" placeholder="Usuario" required>
+                <div id="usuario-error" class="error-message"></div>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input name="contraseña" type="password" id="contraseña" placeholder="Contraseña" required>
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <div class="intereses">
+                <h2>Selecciona tus intereses</h2>
+                <div class="botones-intereses">
+                    <input type="checkbox" id="musica" name="intereses[]" class="interes" value="Musica">
+                    <label for="musica">Música</label>
+                    <input type="checkbox" id="comida" name="intereses[]" class="interes" value="Comida">
+                    <label for="comida">Comida</label>
+                    <input type="checkbox" id="fitness" name="intereses[]" class="interes" value="Fitness">
+                    <label for="fitness">Fitness</label>
+                    <!-- Agrega más opciones de intereses aquí -->
+                    <input type="checkbox" id="estudio" name="intereses[]" class="interes" value="Estudio">
+                    <label for="estudio">Estudio</label>
+                    <input type="checkbox" id="deportes" name="intereses[]" class="interes" value="Deportes">
+                    <label for="deportes">Deportes</label>
+                    <input type="checkbox" id="programacion" name="intereses[]" class="interes" value="Programacion">
+                    <label for="programacion">Programación</label>
+                    <input type="checkbox" id="oratoria" name="intereses[]" class="interes" value="Oratoria">
+                    <label for="oratoria">Oratoria</label>
+                    <!-- Agrega más opciones de intereses aquí -->
+                </div>
+                <div id="intereses-error" class="error-message"></div>
+            </div>
+            <div class="error-message" role="alert" id="login-alert" style="display: none;">
+                <!-- Mensaje de alerta se mostrará aquí -->
+            </div>
+            <input type="submit" value="Enviar" class="button">
+        </div>
+    </form>
+</body>
+
+</html>

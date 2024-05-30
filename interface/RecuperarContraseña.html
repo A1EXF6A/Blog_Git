@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ash</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="../estilos_login.css">
+    <script src="../controllers/ValidarEntrada.js"></script>
+    <script src="../controllers/Errores.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="navbar-brand">My Blog ASH</div>
+        <div class="navbar-buttons">
+            <a href="loginvista.html" class="button">Regresar</a>
+        </div>
+    </div>
+    <!--<p>My Blog ASH</p>-->
+    <form class="formulario" onsubmit="return ValidacionesEntrada.correo()"
+        action="../queries/solicitar_recuperacion.php" method="POST">
+        <h1>Ingrese un correo electrónico</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input id="correo" type="text" name="correo" placeholder="Correo Electrónico" required>
+                <div id="correo-error" class="error-message"></div>
+            </div>
+
+            <input type="submit" value="Ingresar" class="button">
+        </div>
+    </form>
+</body>
+
+</html>

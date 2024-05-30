@@ -1,0 +1,164 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('fondo.jpg') no-repeat center center fixed; /* Cambia el camino de la imagen según sea necesario */
+    background-size: cover;
+    color: #fff;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Desenfoque */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-info {
+    background-color: rgba(139, 0, 139, 0.8);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px); /* Desenfoque */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s; /* Transición suave del color */
+}
+
+.dropdown-content a:hover {
+    color: rgb(219, 60, 60); /* Cambiar el color al pasar el cursor */
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(170, 11, 170);
+}
+
+/* Estilos para la vista del post */
+#post-view {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Desenfoque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.comment-item {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(5px); /* Desenfoque */
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.comment-form textarea,
+.comment-form input[type="text"] {
+    flex-grow: 1;
+    padding: 5px; /* Reducir el padding */
+    border-radius: 5px; /* Reducir el border-radius */
+    border: none;
+    margin-right: 10px;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.send-btn {
+    background-color: rgba(139, 0, 139, 0.8);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: rgb(170, 11, 170);
+}
+
+.user-message {
+    margin-top: 10px;
+    color: #ff6f61; /* Color del mensaje de usuario */
+}
+
+.button {
+    background-image: url('menus.png');
+    background-repeat: no-repeat;
+    height: 40px; /* Ajustar el tamaño del botón */
+    width: 40px; /* Ajustar el tamaño del botón */
+    background-size: 100%; /* Ajustar el tamaño del icono */
+    background-position: center;
+    border: none; /* Eliminar el borde */
+    cursor: pointer;
+    padding: 0; /* Eliminar el relleno */
+    outline: none; /* Eliminar el contorno al hacer clic */
+    background-color: transparent; /* Hacer el botón transparente */
+}

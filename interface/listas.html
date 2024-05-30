@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog AsH</title>
+  <link rel="stylesheet" href="../styles1.css">
+</head>
+
+<body>
+  <header>
+    <div class="dropdown">
+      <button class="button"></button>
+      <div class="dropdown-content">
+        <a href="crearNuevo.html">NUEVO</a>
+        <a href="listas.html">LISTAS</a>
+        <a href="../index.html">SALIR</a>
+      </div>
+    </div>
+    <h1>My Blog AsH</h1>
+    <div class="user-info">USUARIO</div>
+  </header>
+
+  <main>
+    <section id="post-list">
+      <div class="dropdown">
+        <button id="categoryButton" class="dropbtn">‣ All Post</button>
+        <hr>
+        <div id="categoryDropdown" class="dropdown-content">
+          <a href="#" data-category="all">All Post</a>
+          <a href="#" data-category="deporte">Deporte</a>
+          <a href="#" data-category="varios">Varios</a>
+        </div>
+      </div>
+
+      <div class="post-item" data-category="deporte">
+        <div class="post-image"></div>
+        <h3 class="post-title" contenteditable="true">Deporte Post</h3>
+        <div class="post-actions">
+          <button class="delete-btn">Eliminar</button>
+          <button class="edit-btn">Editar</button>
+        </div>
+      </div>
+      <div class="post-item" data-category="varios">
+        <div class="post-image"></div>
+        <h3 class="post-title" contenteditable="true">Varios Post</h3>
+        <div class="post-actions">
+          <button class="delete-btn">Eliminar</button>
+          <button class="edit-btn">Editar</button>
+        </div>
+      </div>
+      <div class="post-item" data-category="all">
+        <div class="post-image"></div>
+        <h3 class="post-title" contenteditable="true">General Post</h3>
+        <div class="post-actions">
+          <button class="delete-btn">Eliminar</button>
+          <button class="edit-btn">Editar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../controllers/script.js"></script>
+</body>
+
+</html>

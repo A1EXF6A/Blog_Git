@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ash</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="../estilos_login.css">
+    <script src="../controllers/ValidarEntrada.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="navbar-brand">My Blog ASH</div>
+        <div class="navbar-buttons">
+            <a href="loginvista.html" class="button">Login</a>
+            <a href="registrarvista.html" class="button">Registrarse</a>
+        </div>
+    </div>
+
+    <!-- Formulario de login -->
+    <form class="formulario" onsubmit="return ValidacionesEntrada.invitado()">
+        <h1>Ingresar como invitado</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input id="invitado" type="text" placeholder="Usuario" required>
+                <div id="invitado-error" class="error-message"></div>
+            </div>
+            <input type="submit" value="Ingresar" class="button" onclick="redirectToPage(event)">
+        </div>
+    </form>
+
+    <script>
+        function redirectToPage(event) {
+            event.preventDefault(); // Evita que se envíe el formulario
+
+            var invitado = document.getElementById("invitado").value.trim();
+            var invitadoError = document.getElementById("invitado-error");
+
+            if (invitado === "") {
+                invitadoError.textContent = "Por favor, ingresa un nombre de usuario.";
+            } else {
+                invitadoError.textContent = ""; // Limpia el mensaje de error
+                window.location.href = "listas.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

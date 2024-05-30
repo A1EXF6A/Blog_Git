@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto HTML</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="buttonM"></button>
+            <div class="dropdown-content">
+                <a href="crearNuevo.html">NUEVO</a>
+                <a href="listas.html">LISTAS</a>
+                <a href="../index.html">SALIR</a>
+            </div>
+        </div>
+        <h1>My Blog AsH</h1>
+        <div class="user-info">USUARIO</div>
+    </header>
+    <form>
+        <div class="input-container">
+            <label for="titulo">Ingrese el título:</label>
+            <input type="text" id="titulo" name="titulo" class="input-title" placeholder="Escribe aquí tu título...">
+            <button class="button" type="button" onclick="execCommand('save')">
+                Publicar <i class="fas fa-upload"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Barra de herramientas -->
+    <div class="toolbar">
+        <button class="button" type="button" onclick="execCommand('bold')">
+            <i class="fas fa-bold"></i>
+        </button>
+        <button class="button" type="button" onclick="execCommand('italic')">
+            <i class="fas fa-italic"></i>
+        </button>
+        <button class="button" type="button" onclick="execCommand('underline')">
+            <i class="fas fa-underline"></i>
+        </button>
+        <button class="button" type="button" onclick="execCommand('strikeThrough')">
+            <i class="fas fa-strikethrough"></i>
+        </button>
+        <button class="button" type="button" onclick="execCommand('insertUnorderedList')">
+            <i class="fas fa-list"></i>
+        </button>
+        <button class="button" type="button" onclick="execCommand('insertOrderedList')">
+            <i class="fas fa-list-ol"></i>
+        </button>
+        <select class="button" onchange="execCommand('fontName', this.value)">
+            <option value="">Selecciona una fuente</option>
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <!-- Agrega más opciones de fuentes aquí -->
+        </select>
+        <button class="button" type="button" onclick="changeFontSize('increase')">
+            <i class="fas fa-search-plus"></i>
+        </button>
+        <button class="button" type="button" onclick="changeFontSize('decrease')">
+            <i class="fas fa-search-minus"></i>
+        </button>
+        <!-- Botón para cargar imagen -->
+        <button class="button" type="button" onclick="document.getElementById('imageInput').click();">
+            <i class="fas fa-image"></i> Cargar Imagen
+        </button>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="insertImage(this)">
+
+        <!-- Botón para cargar video -->
+        <button class="button" type="button" onclick="document.getElementById('videoInput').click();">
+            <i class="fas fa-video"></i> Cargar Video
+        </button>
+        <input type="file" id="videoInput" accept="video/*" style="display: none;" onchange="insertVideo(this)">
+        <button class="button" type="button" onclick="execCommand('justifyLeft')"><i
+                class="fas fa-align-left"></i></button>
+        <button class="button" type="button" onclick="execCommand('justifyCenter')"><i
+                class="fas fa-align-center"></i></button>
+        <button class="button" type="button" onclick="execCommand('justifyRight')"><i
+                class="fas fa-align-right"></i></button>
+        <button class="button" type="button" onclick="execCommand('justifyFull')"><i
+                class="fas fa-align-justify"></i></button>
+        <button class="button" type="button" onclick="execCommand('hiliteColor', 'yellow')">
+            <i class="fas fa-highlighter"></i>
+        </button>
+
+        <!-- Botón para agregar emojis -->
+        <select class="button" id="emojiDropdown" onchange="insertEmoji(this.value)">
+            <option value="">😀 Emoji</option>
+            <option value="😀">😀</option>
+            <option value="😁">😁</option>
+            <option value="😂">😂</option>
+            <option value="🤣">🤣</option>
+            <option value="😃">😃</option>
+            <option value="😄">😄</option>
+            <option value="😅">😅</option>
+            <option value="😆">😆</option>
+            <option value="😉">😉</option>
+            <option value="😊">😊</option>
+            <option value="😋">😋</option>
+            <option value="😎">😎</option>
+            <!-- Añadir más emojis aquí -->
+        </select>
+
+    </div>
+    <div id="editor" contenteditable="true" class="input-content" data-placeholder="Escribe o edita tu texto aquí...">
+        <p class="default-text">Escribe o edita tu texto aquí...</p>
+    </div>
+
+    <script src="../controllers/editor.js"></script>
+</body>
+
+</html>
